@@ -3,8 +3,11 @@ function getCard(n){
 	
 	if(n == "Empty Room"){c = {
 		nam: n,
-		obj: objRoom,
+		obj: objCard,
 		img: imgRoom,
+		atk: 1,
+		def: 2,
+		
 	};}
 	
 	
