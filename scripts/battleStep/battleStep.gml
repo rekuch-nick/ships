@@ -5,13 +5,14 @@ function battleStep(){
 	var ac = activeCard();
 	if(ac != noone){
 		
+		
 		with(ac){ cardTurn(); }
 		
 		//progress card turn
 		
 		
 	} else {
-		
+		if(instance_number(objEffectWait) > 0){ return; }
 		
 		//check for end of battle
 		var playerCards = 0;
@@ -21,12 +22,13 @@ function battleStep(){
 			if(!aly){ foeCards ++; }
 		}
 		
+		var over = false;
 		if(foeCards < 1){
 			// end and win
-			
+			over = true;
 		} else if(playerCards < 1){
 			//end and lose
-			
+			over = true;
 		} else {
 			
 			// if battle not over, set next card to active
@@ -50,7 +52,10 @@ function battleStep(){
 			
 		}
 		
-		
+		if(over){
+			initShop();
+			
+		}
 		
 		
 	

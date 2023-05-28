@@ -1,6 +1,13 @@
 draw_self();
+if(img != noone){
+	draw_sprite_stretched(img, 0, x, y, sprite_width, sprite_height);
+}
 if(acting){
 	draw_sprite_stretched(imgRoomActive, 0, x, y, sprite_width, sprite_height);
+}
+if(isStoreCard){
+	draw_sprite_stretched(imgRoomActiveForSale, 0, x, y, sprite_width, sprite_height);
+	draw_text_color(x + 96, y + 196, "$" + string(cost), c_lime, c_lime, c_lime, c_lime, 1);
 }
 
 
